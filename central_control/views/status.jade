@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    header
+        a(href="#")
+            img(src="img/logo.png", alt="logo")
+        span Qiao Fa
+        nav
+            ul
+                li
+                    a(href="/") 首页
+                li
+                    a(href="/status") 发布状态
+    div.container
+        table.table.table-hover
+            tr
+                th 资源名称
+                th 平台
+                th 详细信息
+                th 约定发布时间
+                th 发布进度
+            - for(var i = 0; i < result.length; i++){
+                - var mapchannel = ['空缺','优酷','搜狐视频','腾讯视频','天天快报','哔哩哔哩','56视频','土豆视频','爱奇艺','乐视','今日头条']
+                - var mapstatus = ['未处理','处理中','处理成功','处理失败(提示修改信息,重新设置)']
+                - var singlechannel = mapchannel[result[i].channel]
+                - var singlestatus = mapstatus[result[i].vstatus]
+            tr
+                td #{result[i].vname}
+                td #{singlechannel}
+                td 分类：#{result[i].vcategory}；标签：#{result[i].vtag}；
+                td #{result[i].vpublishtime}；
+                td #{singlestatus}
+            - }
+    footer
+        p 版权所有®2013-2016
+    script(src="js/status.js")

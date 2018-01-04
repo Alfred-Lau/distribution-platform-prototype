@@ -1,0 +1,158 @@
+html,
+body,
+ul,
+li {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    height: 100%;
+    background: white;
+}
+
+header {
+    height: 80px;
+    background: #efefef;
+}
+
+header a img {
+    height: 80px;
+    float: left;
+}
+
+header span {
+    margin-left: 10px;
+    line-height: 80px;
+    font-size: 40px;
+    font-family: "papyrus";
+    float: left;
+}
+
+header nav ul li {
+    width: 120px;
+    float: left;
+    list-style: none;
+    text-align: center;
+    line-height: 80px;
+}
+
+a {
+    color: #00B7FF;
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #009688;
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+}
+
+a:hover,
+a:active {
+    text-decoration: none;
+    color: #ff0;
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+}
+
+.wraper {
+    height: 100%;
+    margin-bottom: -100px;
+    margin-top: 10px;
+}
+
+
+.left {
+    background: #e8e8e8;
+    margin-right: 10px;
+    width: 240px;
+    height: 100%;
+    float: left;
+}
+
+.left .info h1,
+.main .info h1,
+.right .info h1 {
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.file {
+    margin: 10px;
+    background: white;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+.item {
+    background: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+.video-web {
+    padding-left: 30px;
+}
+
+.main {
+    margin-right: 10px;
+    /*background: gray;*/
+    /*设备高度的100%*/
+    /*height: 100%;*/
+    width: 800px;
+    float: left;
+}
+
+.area {
+    margin: 10px;
+    padding: 10px;
+    background: #e8e8e8;
+    /*height: 400px;*/
+    width: 47%;
+    float: left;
+    border-radius: 6px;
+}
+
+
+/*    .areaLeft,
+    .areaRight,
+    .areaMiddle {
+        float: left;
+        padding: 10px;
+    }*/
+
+.area h1 {
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.textArea {
+    border-radius: 5px;
+}
+
+.right {
+    margin-right: 10px;
+    background: #e8e8e8;
+    height: 100%;
+    width: 190px;
+    float: right;
+}
+
+footer {
+    clear: both;
+    height: 80px;
+    width: 100%;
+    background: #e8e8e8;
+}
+
+footer p {
+    text-align: center;
+    line-height: 80px;
+}

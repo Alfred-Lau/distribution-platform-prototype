@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>巧发</title>
+    <link rel="stylesheet" href="../public/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/datetimepicker/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../public/dist/js/bootstrap.js"></script>
+    <script src="../public/datetimepicker/js/bootstrap-datetimepicker.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="#">
+            <img src="img/logo.png" alt="logo">
+        </a>
+        <span>Qiao Fa</span>
+    </header>
+    <div class="wraper">
+        <form id="upload-form" action='/youku' , method="post" , enctype="multipart/form-data">
+            <div class="left">
+                <div class="info">
+                    <h1>第一步</h1>
+                </div>
+                <div class="file">
+                    <input type="file">
+                </div>
+                <div class="item">
+                    <input type="checkbox" checked id="youku"><span class="video-web">优酷视频</span></div>
+                <div class="item">
+                    <input type="checkbox" checked id="souhu"><span class="video-web">搜狐视频</span></div>
+                <div class="item">
+                    <input type="checkbox" checked id="qqvideo"><span class="video-web">腾讯视频</span></div>
+                <div class="item">
+                    <input type="checkbox" checked id="omqq"><span class="video-web">天天快报</span></div>
+            </div>
+            <div class="main">
+                <div class="info" style="background:#e8e8e8;padding:5px 0px;margin:0 8px;">
+                    <h1>第二步</h1>
+                </div>
+                <section class="area" id="youku">
+                    <h1>优酷视频</h1> 用户名：
+                    <input type="text" class="uname textArea form-control" id="youkuUserName"> 密码：
+                    <input type="text" class="upass textArea form-control" id="youkuUserPassword"> 视频标题：
+                    <input type="text" class="VideoName textArea form-control" id="youkuVideoName"> 视频标签：
+                    <input type="text" class="VideoTag textArea form-control" id="youkuVideoTag"> 视频分类：
+                    <select name="youkucategory" id="youkucategory">
+                        <option value="97">电视剧</option>
+                        <option value="96">电影</option>
+                        <option value="85">综艺</option>
+                        <option value="100">动漫</option>
+                        <option value="95">音乐</option>
+                        <option value="87">教育</option>
+                        <option value="84">纪录片</option>
+                        <option value="91">资讯</option>
+                        <option value="86">娱乐</option>
+                        <option value="98">体育</option>
+                        <option value="104">汽车</option>
+                        <option value="105">科技</option>
+                        <option value="99">游戏</option>
+                        <option value="103">生活</option>
+                        <option value="89">时尚</option>
+                        <option value="88">旅游</option>
+                        <option value="90">亲子</option>
+                        <option value="94">搞笑</option>
+                        <option value="171">微电影</option>
+                        <option value="172">网剧</option>
+                        <option value="174">拍客</option>
+                        <option value="175">创意视频</option>
+                        <option value="176">自拍</option>
+                        <option value="102">广告</option>
+                        <option value="106">其他</option>
+                    </select>
+                    <br>上传时间：
+                    <input size="16" type="text" value="2012-06-15 14:45" class="form_datetime form-control" id="youkuUploadTime">视频简介：
+                    <textarea class="form-control" rows="3" id="youkuVideoDesc"></textarea>
+                </section>
+                <section class="area" id="souhu">
+                    <h1>搜狐视频</h1> 用户名：
+                    <input type="text" class="uname textArea form-control" id="souhuUserName"> 密码：
+                    <input type="text" class="upass textArea form-control" id="souhuUserPassword"> 视频标题：
+                    <input type="text" class="VideoName textArea form-control" id="souhuVideoName"> 视频分类：
+                    <select name="souhuVideoCategory" id="souhuVideoCategory">
+                        <option value="133113">搞笑-恶搞吐槽</option>
+                        <option value="133126">搞笑-混剪配音/穿帮</option>
+                        <option value="133123">搞笑-奇闻趣事</option>
+                        <option value="133125">搞笑-搞笑动画</option>
+                        <option value="133128">搞笑-音乐歪唱</option>
+                        <option value="133124">搞笑-相声小品</option>
+                        <option value="133129">搞笑-萌宠</option>
+                        <option value="128103">游戏-电子竞技</option>
+                        <option value="128100">游戏-游戏头条</option>
+                        <option value="128105">游戏-手游</option>
+                        <option value="128108">游戏-集锦TOP</option>
+                        <option value="128109">游戏-现场赛事</option>
+                        <option value="128110">游戏-宣传片CG</option>
+                        <option value="128111">游戏-真人秀</option>
+                        <option value="128112">游戏-DOTA/DOTA2</option>
+                        <option value="128113">游戏-英雄联盟</option>
+                        <option value="128114">游戏-我的世界</option>
+                        <option value="128115">游戏-网络游戏</option>
+                        <option value="128116">游戏-单机游戏</option>
+                        <option value="128020">游戏-其他</option>
+                        <option value="101134100">网络剧-搞笑</option>
+                        <option value="101134101">网络剧-爱情</option>
+                        <option value="101134103">网络剧-悬疑</option>
+                        <option value="101134102">网络剧-亲情</option>
+                        <option value="101134105">网络剧-公益</option>
+                        <option value="101134104">网络剧-其他</option>
+                        <option value="100136100">微电影-搞笑</option>
+                        <option value="100136101">微电影-爱情</option>
+                        <option value="100136105">微电影-悬疑</option>
+                        <option value="100136102">微电影-亲情</option>
+                        <option value="100136103">微电影-公益</option>
+                        <option value="100136104">微电影-其他</option>
+                        <option value="206100">时尚美妆-</option>
+                        <option value="">时尚美妆-</option>
+                        <option value="">时尚美妆-</option>
+                        <option value="">时尚美妆-</option>
+                        <option value="">时尚美妆-</option>
+                        <option value="">时尚美妆-</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+
+                    </select>
+                    <br>视频标签：
+                    <input type="text" class="VideoTag textArea form-control" id="souhuVideoTag"> 上传时间：
+                    <input size="16" type="text" value="2012-06-15 14:45" class="form_datetime form-control" id="souhuUploadTime">视频简介：
+                    <textarea class="form-control" rows="3" id="souhuVideoDesc"></textarea>
+                </section>
+                <section class="area" id="qqvideo">
+                    <h1>腾讯视频</h1> 用户名：
+                    <input type="text" class="uname textArea form-control" id="qqvideoUserName"> 密码：
+                    <input type="text" class="upass textArea form-control" id="qqvideoUserPassword"> 视频标题：
+                    <input type="text" class="VideoName textArea form-control" id="qqvideoVideoName">视频分类：
+                    <input type="text" class="VideoCategory textArea form-control" id="qqVideoCategory"> 视频标签：
+                    <input type="text" class="VideoTag textArea form-control" id="qqvideoVideoTag"> 上传时间：
+                    <input size="16" type="text" value="2012-06-15 14:45" class="form_datetime form-control" id="qqvideoUploadTime">视频简介：
+                    <textarea class="form-control" rows="3" id="qqvideoVideoDesc"></textarea>
+                </section>
+                <section class="area" id="omqq">
+                    <h1>天天快报</h1> 用户名：
+                    <input type="text" class="uname textArea form-control" id="omqqUserName"> 密码：
+                    <input type="text" class="upass textArea form-control" id="omqqUserPassword"> 视频标题：
+                    <input type="text" class="VideoName textArea form-control" id="omqqVideoName"> 视频分类：
+                    <input type="text" class="VideoCategory textArea form-control" id="omqqVideoCategory"> 视频标签：
+                    <input type="text" class="VideoTag textArea form-control" id="omqqVideoTag"> 上传时间：
+                    <input size="16" type="text" value="2012-06-15 14:45" class="form_datetime form-control" id="omqqUploadTime">视频简介：
+                    <textarea class="form-control" rows="3" id="omqqVideoDesc"></textarea>
+                </section>
+            </div>
+            <div class="right">
+                <div class="info">
+                    <h1>第三步</h1>
+                </div>
+                <div class="submit">
+                    <button type="submit" class="btn btn-primary" style="margin:65px;">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <p>版权所有®2013-2016</p>
+    </footer>
+</body>
+<script type="text/javascript">
+</script>
+
+</html>

@@ -1,0 +1,977 @@
+extends layout
+
+block content
+	header
+		a(href="#")
+			img(src="img/logo.png" alt="logo")
+		span Qiao Fa
+		nav
+			ul
+				li
+					a(href="/") 首页
+				li
+					a(href="/status") 发布状态
+	div.wraper
+		form#upload-form( action='/submit' , method="post" , enctype="multipart/form-data")
+			div.left
+				div.info
+					h1 第一步
+				div.file
+					input(type="file" name="file")
+				div.item
+					input#youku(type="checkbox" checked name="youku")
+					span.video-web 优酷视频
+				div.item
+					input#souhu(type="checkbox" name="souhu")
+					span.video-web 搜狐视频
+				div.item
+					input#qqvideo(type="checkbox" checked name="qqvideo")
+					span.video-web 腾讯视频
+				div.item
+					input#omqq(type="checkbox" checked name="omqq")
+					span.video-web 天天快报
+				div.item
+					input#bilibili(type="checkbox" checked name="bilibili")
+					span.video-web 哔哩哔哩
+				div.item
+					input#five6(type="checkbox"  name="five6")
+					span.video-web 56视频
+				div.item
+					input#tudou(type="checkbox" checked name="tudou")
+					span.video-web 土豆视频			
+				div.item
+					input#aiqiyi(type="checkbox"  name="aiqiyi")
+					span.video-web 爱奇艺				
+				div.item
+					input#leshi(type="checkbox"  name="leshi")
+					span.video-web 乐视
+				div.item
+					input#toutiao(type="checkbox"  name="toutiao")
+					span.video-web 今日头条			
+			div.main
+				div.info(style="background:#e8e8e8;padding:5px 0px;margin:0 8px;")
+					h1 第二步
+				section.area#youku
+					h1 优酷视频
+					用户名
+					input.uname.textArea.form-control#youkuUserName(type="text" name="youkuUserName") 
+					密码
+					input.upass.textArea.form-control#youkuPassword(type="text" name="youkuPassword")
+					视频标题
+					input.VideoName.textArea.form-control#youkuVideoName(type="text" name="youkuVideoName")
+					视频标签
+					input.VideoTag.textArea.form-control#youkuVideoTag(type="text" name="youkuVideoTag" )
+					视频分类
+					select.form-control#youkuVideoCategory(name="youkuVideoCategory")
+						option(value="97") 电视剧
+						option(value="96") 电影
+						option(value="85") 综艺
+						option(value="100") 动漫
+						option(value="95") 音乐
+						option(value="87") 教育
+						option(value="84") 纪录片
+						option(value="91") 资讯
+						option(value="86") 娱乐
+						option(value="98") 体育
+						option(value="104") 汽车
+						option(value="105") 科技
+						option(value="99") 游戏
+						option(value="103") 生活
+						option(value="89") 时尚
+						option(value="88") 旅游
+						option(value="90") 亲子
+						option(value="94") 搞笑
+						option(value="171") 微电影
+						option(value="172") 网剧
+						option(value="174") 拍客
+						option(value="175") 创意视频
+						option(value="176") 自拍
+						option(value="102") 广告
+						option(value="106") 其他
+					预约发布时间
+					input.form_datetime.form-control#youkuUploadTime(size="16" type="text" name="youkuUploadTime" value="2012-06-15 14:45")
+					视频简介
+					textarea.form-control#youkuVideoDesc(rows="3" name="youkuVideoDesc")
+				section.area#souhu
+					h1 搜狐视频
+					用户名
+					input.uname.textArea.form-control#souhuUserName(type="text" name="souhuUserName") 
+					密码
+					input.upass.textArea.form-control#souhuPassword(type="text" name="souhuPassword")
+					视频标题
+					input.VideoName.textArea.form-control#souhuVideoName(type="text" name="souhuVideoName")
+					视频分类
+					select.form-control#souhuVideoCategory(name="souhuVideoCategory")
+						option(value="133113-搞笑") 搞笑-恶搞吐槽
+						option(value="133126-搞笑") 搞笑-混剪配音/穿帮
+						option(value="133123-搞笑") 搞笑-奇闻趣事
+						option(value="133125-搞笑") 搞笑-搞笑动画
+						option(value="133128-搞笑") 搞笑-音乐歪唱
+						option(value="133124-搞笑") 搞笑-相声小品
+						option(value="133129-搞笑") 搞笑-萌宠
+						option(value="128103-游戏") 游戏-电子竞技
+						option(value="128100-游戏") 游戏-游戏头条
+						option(value="128105-游戏") 游戏-手游
+						option(value="128108-游戏") 游戏-集锦TOP
+						option(value="128109-游戏") 游戏-现场赛事
+						option(value="128110-游戏") 游戏-宣传片CG
+						option(value="128111-游戏") 游戏-真人秀
+						option(value="128112-游戏") 游戏-DOTA/DOTA2
+						option(value="128113-游戏") 游戏-英雄联盟
+						option(value="128114-游戏") 游戏-我的世界
+						option(value="128115-游戏") 游戏-网络游戏
+						option(value="128116-游戏") 游戏-单机游戏
+						option(value="128020-游戏") 游戏-其他
+						option(value="101134100-网络剧") 网络剧-搞笑
+						option(value="101134101-网络剧") 网络剧-爱情
+						option(value="101134103-网络剧") 网络剧-悬疑
+						option(value="101134102-网络剧") 网络剧-亲情
+						option(value="101134105-网络剧") 网络剧-公益
+						option(value="101134104-网络剧") 网络剧-其他
+						option(value="100136100-微电影") 微电影-搞笑
+						option(value="100136101-微电影") 微电影-爱情
+						option(value="100136105-微电影") 微电影-悬疑
+						option(value="100136102-微电影") 微电影-亲情
+						option(value="100136103-微电影") 微电影-公益
+						option(value="100136104-微电影") 微电影-其他
+						option(value="206100-时尚美妆") 时尚美妆-护肤
+						option(value="206101-时尚美妆") 时尚美妆-发型
+						option(value="206102-时尚美妆") 时尚美妆-化妆
+						option(value="206103-时尚美妆") 时尚美妆-穿搭
+						option(value="206104-时尚美妆") 时尚美妆-星尚文化
+						option(value="206105-时尚美妆") 时尚美妆-时尚街拍
+						option(value="131128-旅游") 旅游-国内游
+						option(value="131130-旅游") 旅游-东南亚
+						option(value="131131-旅游") 旅游-欧洲
+						option(value="131132-旅游") 旅游-澳洲
+						option(value="131133-旅游") 旅游-奇闻探险
+						option(value="131113-旅游") 旅游-旅游攻略
+						option(value="131126-旅游") 旅游-旅游资讯
+						option(value="131114-旅游") 旅游-风俗趣闻
+						option(value="131117-旅游") 旅游-其他
+						option(value="106127100-脱口秀") 脱口秀-历史
+						option(value="106127101-脱口秀") 脱口秀-科普
+						option(value="106127102-脱口秀") 脱口秀-人文
+						option(value="106127103-脱口秀") 脱口秀-搞笑
+						option(value="106127105-脱口秀") 脱口秀-百姓街访
+						option(value="106127106-脱口秀") 脱口秀-综艺娱乐
+						option(value="106127107-脱口秀") 脱口秀-资讯时评
+						option(value="210114-学习考试") 学习考试-小初高\考研
+						option(value="210119-学习考试") 学习考试-外语
+						option(value="210120-学习考试") 学习考试-公考类
+						option(value="210121-学习考试") 学习考试-职场充电
+						option(value="210122-学习考试") 学习考试-职业考试
+						option(value="210123-学习考试") 学习考试-科普
+						option(value="210124-学习考试") 学习考试-休闲课堂
+						option(value="129127-小知识") 小知识-恋爱百科
+						option(value="129123-小知识") 小知识-生活百科
+						option(value="129130-小知识") 小知识-投资理财
+						option(value="209100-健康养生") 健康养生-医学常识
+						option(value="209101-健康养生") 健康养生-养生
+						option(value="209102-健康养生") 健康养生-两性
+						option(value="115140-动漫") 动漫-科普
+						option(value="115141-动漫") 动漫-吐槽
+						option(value="115134-动漫") 动漫-cosplay
+						option(value="115139-动漫") 动漫-搞笑
+						option(value="115135-动漫") 动漫-其他
+						option(value="202101-娱乐八卦") 娱乐八卦-娱乐大事件
+						option(value="202100-娱乐八卦") 娱乐八卦-影视赏析
+						option(value="126120-汽车") 汽车-用车常识
+						option(value="126124-汽车") 汽车-试驾评测
+						option(value="126108-汽车") 汽车-香车美女
+						option(value="126125-汽车") 汽车-新车资讯
+						option(value="126121-汽车") 汽车-玩车改装
+						option(value="126122-汽车") 汽车-交通警示
+						option(value="126126-汽车") 汽车-业界动态
+						option(value="126119-汽车") 汽车-赛事
+						option(value="127100-科技") 科技-随身数码
+						option(value="127115-科技") 科技-智能家居
+						option(value="127119-科技") 科技-科技评测
+						option(value="127116-科技") 科技-IT业界
+						option(value="127120-科技") 科技-软件应用
+						option(value="127106-科技") 科技-科技资讯
+						option(value="127109-科技") 科技-新奇酷玩
+						option(value="127121-科技") 科技-航拍
+						option(value="125104-运动健身") 运动健身-极限运动
+						option(value="125116-运动健身") 运动健身-球类
+						option(value="125117-运动健身") 运动健身-运动装备
+						option(value="125119-运动健身") 运动健身-跑步
+						option(value="125120-运动健身") 运动健身-运动常识
+						option(value="125121-运动健身") 运动健身-健身塑形
+						option(value="208100-做饭") 做饭-家常菜
+						option(value="208101-做饭") 做饭-日韩料理
+						option(value="208102-做饭") 做饭-西餐
+						option(value="208103-做饭") 做饭-甜品烘焙
+						option(value="132119-母婴") 母婴-少儿卡通
+						option(value="132120-母婴") 母婴-母婴宝典
+						option(value="132121-母婴") 母婴-萌娃秀
+						option(value="132122-母婴") 母婴-宝贝辅食
+						option(value="132123-母婴") 母婴-孕产知识
+						option(value="132124-母婴") 母婴-育儿健康
+						option(value="132125-母婴") 母婴-早教
+						option(value="101137100-原创短剧") 原创短剧-科普
+						option(value="101137101-原创短剧") 原创短剧-搞笑
+						option(value="101137102-原创短剧") 原创短剧-爱情
+						option(value="101137103-原创短剧") 原创短剧-悬疑
+						option(value="101137104-原创短剧") 原创短剧-亲情
+						option(value="101137105-原创短剧") 原创短剧-文艺
+						option(value="101137106-原创短剧") 原创短剧-其他
+						option(value="121114-音乐") 音乐-原创
+						option(value="121124-音乐") 音乐-翻唱
+						option(value="121125-音乐") 音乐-音乐策划
+						option(value="121126-音乐") 音乐-花絮
+						option(value="107121-纪录片") 纪录片-探索
+						option(value="107122-纪录片") 纪录片-历史
+						option(value="107123-纪录片") 纪录片-科学
+						option(value="107114-纪录片") 纪录片-社会人文
+						option(value="107120-纪录片") 纪录片-其他
+						option(value="207100-星座") 星座-星座八卦
+						option(value="207101-星座") 星座-星座解析
+						option(value="207102-星座") 星座-星座运势
+						option(value="205100-舞蹈") 舞蹈-街舞热舞
+						option(value="205101-舞蹈") 舞蹈-宅舞
+						option(value="205102-舞蹈") 舞蹈-广场舞
+						option(value="204100-公开课") 公开课-社会人文
+						option(value="204101-公开课") 公开课-名师在线
+						option(value="204102-公开课") 公开课-纪实纪录
+						option(value="204103-公开课") 公开课-国内大学
+						option(value="204104-公开课") 公开课-职业考试
+						option(value="212100-千里眼") 千里眼-头条爆料
+						option(value="212101-千里眼") 千里眼-第一现场
+						option(value="212102-千里眼") 千里眼-监拍纪实
+						option(value="212103-千里眼") 千里眼-行车记录
+						option(value="212104-千里眼") 千里眼-街采策划
+						option(value="212105-千里眼") 千里眼-航拍视界
+						option(value="212106-千里眼") 千里眼-民间牛人
+						option(value="212107-千里眼") 千里眼-深度报道
+						option(value="212108-千里眼") 千里眼-奇葩囧事
+						option(value="212109-千里眼") 千里眼-镜头故事
+						option(value="213100-VR全景") VR全景-极限运动
+						option(value="213101-VR全景") VR全景-旅游
+						option(value="213102-VR全景") VR全景-体育
+						option(value="213103-VR全景") VR全景-电影
+						option(value="213104-VR全景") VR全景-明星
+						option(value="213105-VR全景") VR全景-游戏
+						option(value="213106-VR全景") VR全景-虚拟现实
+						option(value="213107-VR全景") VR全景-二次元
+						option(value="213108-VR全景") VR全景-美女
+						option(value="213109-VR全景") VR全景-其他
+						option(value="215100-网络大电影") 网络大电影-搞笑
+						option(value="215101-网络大电影") 网络大电影-爱情
+						option(value="215102-网络大电影") 网络大电影-悬疑
+						option(value="215103-网络大电影") 网络大电影-亲情
+						option(value="215104-网络大电影") 网络大电影-公益
+						option(value="215105-网络大电影") 网络大电影-其他
+						option(value="192104-其他") 其他-军事
+						option(value="192102-其他") 其他-广告
+						option(value="192103-其他") 其他-其他
+					视频标签
+					input.VideoTag.textArea.form-control#souhuVideoTag(type="text" name="souhuVideoTag" )
+					预约发布时间
+					input.form_datetime.form-control#souhuUploadTime(size="16" type="text" name="souhuUploadTime" value="2012-06-15 14:45")
+					视频简介
+					textarea.form-control#souhuVideoDesc(rows="3" name="souhuVideoDesc")			
+				section.area#qqvideo
+					h1 腾讯视频
+					用户名
+					input.uname.textArea.form-control#qqvideoUserName(type="text" name="qqvideoUserName") 
+					密码
+					input.upass.textArea.form-control#qqvideoPassword(type="text" name="qqvideoPassword")
+					视频标题
+					input.VideoName.textArea.form-control#qqvideoVideoName(type="text" name="qqvideoVideoName" placeholder="不能少于七个字")
+					视频分类
+					select.form-control#qqVideoCategory(name="qqVideoCategory")
+						option(value="电影-电影预告片") 电影-电影预告片
+						option(value="电影-电影资讯") 电影-电影资讯
+						option(value="电影-电影剪辑") 电影-电影剪辑
+						option(value="电影-微电影") 电影-微电影
+						option(value="电影-影评") 电影-影评
+						option(value="电视剧-电视剧剪辑") 电视剧-电视剧剪辑
+						option(value="电视剧-电视剧片花") 电视剧-电视剧片花
+						option(value="电视剧-剧集周边") 电视剧-剧集周边
+						option(value="电视剧-网络剧") 电视剧-网络剧
+						option(value="音乐-演出现场") 音乐-演出现场
+						option(value="音乐-官方MV") 音乐-官方MV
+						option(value="音乐-原创音乐") 音乐-原创音乐
+						option(value="音乐-音乐节目") 音乐-音乐节目
+						option(value="音乐-恶搞音乐") 音乐-恶搞音乐
+						option(value="音乐-翻唱") 音乐-翻唱
+						option(value="音乐-演奏") 音乐-演奏
+						option(value="动漫-连载动画") 动漫-连载动画
+						option(value="动漫-原创动画") 动漫-原创动画
+						option(value="动漫-动漫周边") 动漫-动漫周边
+						option(value="动漫-宅文化") 动漫-宅文化
+						option(value="体育-篮球") 体育-篮球
+						option(value="体育-足球") 体育-足球
+						option(value="体育-体育趣闻") 体育-体育趣闻
+						option(value="体育-体育教学") 体育-体育教学
+						option(value="体育-综合体育") 体育-综合体育
+						option(value="娱乐-综艺节目") 娱乐-综艺节目
+						option(value="娱乐-明星资讯") 娱乐-明星资讯
+						option(value="娱乐-舞台剧") 娱乐-舞台剧
+						option(value="娱乐-魔术") 娱乐-魔术
+						option(value="娱乐-戏曲") 娱乐-戏曲
+						option(value="教育-演讲") 教育-演讲
+						option(value="教育-公开课") 教育-公开课
+						option(value="教育-职场教育") 教育-职场教育
+						option(value="教育-升学考试") 教育-升学考试
+						option(value="教育-技能教育") 教育-技能教育
+						option(value="教育-校园内外") 教育-校园内外
+						option(value="教育-人生课堂") 教育-人生课堂
+						option(value="教育-外语学习") 教育-外语学习
+						option(value="数码-评测") 数码-评测
+						option(value="数码-产品资讯") 数码-产品资讯
+						option(value="数码-智能生活") 数码-智能生活
+						option(value="数码-数码其他") 数码-数码其他
+						option(value="舞蹈-舞蹈MV") 舞蹈-舞蹈MV
+						option(value="舞蹈-热舞现场") 舞蹈-热舞现场
+						option(value="舞蹈-舞蹈达人") 舞蹈-舞蹈达人
+						option(value="舞蹈-舞蹈教学") 舞蹈-舞蹈教学
+						option(value="舞蹈-舞蹈比赛") 舞蹈-舞蹈比赛
+						option(value="舞蹈-舞蹈练习室") 舞蹈-舞蹈练习室
+						option(value="少儿-儿歌") 少儿-儿歌
+						option(value="少儿-益智") 少儿-益智
+						option(value="少儿-少儿动画") 少儿-少儿动画
+						option(value="少儿-少儿剧场") 少儿-少儿剧场
+						option(value="少儿-亲子成长") 少儿-亲子成长
+						option(value="少儿-少儿节目") 少儿-少儿节目
+						option(value="搞笑-鬼畜") 搞笑-鬼畜
+						option(value="搞笑-奇趣") 搞笑-奇趣
+						option(value="搞笑-段子剧") 搞笑-段子剧
+						option(value="搞笑-神回复") 搞笑-神回复
+						option(value="搞笑-熊孩子") 搞笑-熊孩子
+						option(value="搞笑-恶搞糗事") 搞笑-恶搞糗事
+						option(value="搞笑-爆笑原创") 搞笑-爆笑原创
+						option(value="搞笑-爆笑动物") 搞笑-爆笑动物
+						option(value="搞笑-爆笑恶搞") 搞笑-爆笑恶搞
+						option(value="搞笑-相声小品") 搞笑-相声小品
+						option(value="纪录片-纪录片") 纪录片-纪录片
+						option(value="文化历史-读书") 文化历史-读书
+						option(value="文化历史-艺术") 文化历史-艺术
+						option(value="文化历史-宗教") 文化历史-宗教
+						option(value="文化历史-历史") 文化历史-历史
+						option(value="新闻-国内时政") 新闻-国内时政
+						option(value="新闻-国内民生") 新闻-国内民生
+						option(value="新闻-国际时政") 新闻-国际时政
+						option(value="新闻-国际社会") 新闻-国际社会
+						option(value="新闻-社会百态") 新闻-社会百态
+						option(value="新闻-人物访谈") 新闻-人物访谈
+						option(value="新闻-地方政务") 新闻-地方政务
+						option(value="新闻-奇闻趣事") 新闻-奇闻趣事
+						option(value="新闻-法制") 新闻-法制
+						option(value="新闻-反腐") 新闻-反腐
+						option(value="新闻-交通") 新闻-交通
+						option(value="新闻-安全") 新闻-安全
+						option(value="新闻-正能量") 新闻-正能量
+						option(value="旅游-境内游") 旅游-境内游
+						option(value="旅游-境外游") 旅游-境外游
+						option(value="旅游-旅行攻略") 旅游-旅行攻略
+						option(value="旅游-旅行趣闻") 旅游-旅行趣闻
+						option(value="时尚-时尚资讯") 时尚-时尚资讯
+						option(value="时尚-时尚大片") 时尚-时尚大片
+						option(value="时尚-美容化妆") 时尚-美容化妆
+						option(value="时尚-潮流奢品") 时尚-潮流奢品
+						option(value="时尚-男士时尚") 时尚-男士时尚
+						option(value="时尚-T台秀场") 时尚-T台秀场
+						option(value="时尚-穿搭") 时尚-穿搭
+						option(value="母婴-孕产") 母婴-孕产
+						option(value="母婴-早教") 母婴-早教
+						option(value="母婴-萌宝") 母婴-萌宝
+						option(value="母婴-保健护理") 母婴-保健护理
+						option(value="汽车-新车速递") 汽车-新车速递
+						option(value="汽车-试驾评测") 汽车-试驾评测
+						option(value="汽车-汽车资讯") 汽车-汽车资讯
+						option(value="汽车-用车之道") 汽车-用车之道
+						option(value="汽车-玩车") 汽车-玩车
+						option(value="汽车-车模") 汽车-车模
+						option(value="汽车-汽车其他") 汽车-汽车其他
+						option(value="财经-公司") 财经-公司
+						option(value="财经-创业") 财经-创业
+						option(value="财经-经济") 财经-经济
+						option(value="财经-消费") 财经-消费
+						option(value="财经-投资") 财经-投资
+						option(value="财经-理财") 财经-理财
+						option(value="财经-产经") 财经-产经
+						option(value="财经-股市") 财经-股市
+						option(value="财经-金融") 财经-金融
+						option(value="财经-房地产") 财经-房地产
+						option(value="财经-财经人物") 财经-财经人物
+						option(value="游戏-手机游戏") 游戏-手机游戏
+						option(value="游戏-网络游戏") 游戏-网络游戏
+						option(value="游戏-单机游戏") 游戏-单机游戏
+						option(value="游戏-游戏节目") 游戏-游戏节目
+						option(value="游戏-达人解说") 游戏-达人解说
+						option(value="游戏-电竞赛事") 游戏-电竞赛事
+						option(value="游戏-游戏展会") 游戏-游戏展会
+						option(value="游戏-游戏周边") 游戏-游戏周边
+						option(value="生活-宠物") 生活-宠物
+						option(value="生活-美食") 生活-美食
+						option(value="生活-两性") 生活-两性
+						option(value="生活-星座") 生活-星座
+						option(value="生活-情感") 生活-情感
+						option(value="生活-健康") 生活-健康
+						option(value="生活-休闲") 生活-休闲
+						option(value="生活-健身") 生活-健身
+						option(value="生活-家居") 生活-家居
+						option(value="生活-生活窍门") 生活-生活窍门
+						option(value="生活-风水命理") 生活-风水命理
+						option(value="科学-科学实验") 科学-科学实验
+						option(value="科学-太空探索") 科学-太空探索
+						option(value="科学-科学其他") 科学-科学其他
+						option(value="科技-机械") 科技-机械
+						option(value="科技-互联网") 科技-互联网
+						option(value="科技-科技前沿") 科技-科技前沿
+						option(value="科技-科技奇趣") 科技-科技奇趣
+						option(value="科技-航空航天") 科技-航空航天
+						option(value="军事-军情解读") 军事-军情解读
+						option(value="军事-军事节目") 军事-军事节目
+						option(value="军事-武器装备") 军事-武器装备
+						option(value="军事-战争历史") 军事-战争历史
+						option(value="科普-科普") 科普-科普
+						option(value="其他-广告") 其他-广告
+						option(value="其他-创意") 其他-创意
+						option(value="其他-自拍") 其他-自拍
+						option(value="其他-摄影") 其他-摄影
+						option(value="其他-公益短片") 其他-公益短片
+					视频标签
+					input.VideoTag.textArea.form-control#qqvideoVideoTag(type="text" name="qqvideoVideoTag" )
+					预约发布时间
+					input.form_datetime.form-control#qqvideoUploadTime(size="16" type="text" name="qqvideoUploadTime" value="2012-06-15 14:45")
+					视频简介
+					textarea.form-control#qqvideoVideoDesc(rows="3" name="qqvideoVideoDesc")		
+				section.area#omqq
+					h1 天天快报
+					用户名
+					input.uname.textArea.form-control#omqqUserName(type="text" name="omqqUserName") 
+					密码
+					input.upass.textArea.form-control#omqqPassword(type="text" name="omqqPassword")
+					视频标题
+					input.VideoName.textArea.form-control#omqqVideoName(type="text" name="omqqVideoName" placeholder="不能少于七个字")
+					视频分类
+					select.form-control#omqqVideoCategory(name="omqqVideoCategory")
+						option(value="电影-电影预告片") 电影-电影预告片
+						option(value="电影-电影资讯") 电影-电影资讯
+						option(value="电影-电影剪辑") 电影-电影剪辑
+						option(value="电影-微电影") 电影-微电影
+						option(value="电影-影评") 电影-影评
+						option(value="电视剧-电视剧剪辑") 电视剧-电视剧剪辑
+						option(value="电视剧-电视剧片花") 电视剧-电视剧片花
+						option(value="电视剧-剧集周边") 电视剧-剧集周边
+						option(value="电视剧-网络剧") 电视剧-网络剧
+						option(value="音乐-演出现场") 音乐-演出现场
+						option(value="音乐-官方MV") 音乐-官方MV
+						option(value="音乐-原创音乐") 音乐-原创音乐
+						option(value="音乐-音乐节目") 音乐-音乐节目
+						option(value="音乐-恶搞音乐") 音乐-恶搞音乐
+						option(value="音乐-翻唱") 音乐-翻唱
+						option(value="音乐-演奏") 音乐-演奏
+						option(value="动漫-连载动画") 动漫-连载动画
+						option(value="动漫-原创动画") 动漫-原创动画
+						option(value="动漫-动漫周边") 动漫-动漫周边
+						option(value="动漫-宅文化") 动漫-宅文化
+						option(value="体育-篮球") 体育-篮球
+						option(value="体育-足球") 体育-足球
+						option(value="体育-体育趣闻") 体育-体育趣闻
+						option(value="体育-体育教学") 体育-体育教学
+						option(value="体育-综合体育") 体育-综合体育
+						option(value="娱乐-综艺节目") 娱乐-综艺节目
+						option(value="娱乐-明星资讯") 娱乐-明星资讯
+						option(value="娱乐-舞台剧") 娱乐-舞台剧
+						option(value="娱乐-魔术") 娱乐-魔术
+						option(value="娱乐-戏曲") 娱乐-戏曲
+						option(value="教育-演讲") 教育-演讲
+						option(value="教育-公开课") 教育-公开课
+						option(value="教育-职场教育") 教育-职场教育
+						option(value="教育-升学考试") 教育-升学考试
+						option(value="教育-技能教育") 教育-技能教育
+						option(value="教育-校园内外") 教育-校园内外
+						option(value="教育-人生课堂") 教育-人生课堂
+						option(value="教育-外语学习") 教育-外语学习
+						option(value="数码-评测") 数码-评测
+						option(value="数码-产品资讯") 数码-产品资讯
+						option(value="数码-智能生活") 数码-智能生活
+						option(value="数码-数码其他") 数码-数码其他
+						option(value="舞蹈-舞蹈MV") 舞蹈-舞蹈MV
+						option(value="舞蹈-热舞现场") 舞蹈-热舞现场
+						option(value="舞蹈-舞蹈达人") 舞蹈-舞蹈达人
+						option(value="舞蹈-舞蹈教学") 舞蹈-舞蹈教学
+						option(value="舞蹈-舞蹈比赛") 舞蹈-舞蹈比赛
+						option(value="舞蹈-舞蹈练习室") 舞蹈-舞蹈练习室
+						option(value="少儿-儿歌") 少儿-儿歌
+						option(value="少儿-益智") 少儿-益智
+						option(value="少儿-少儿动画") 少儿-少儿动画
+						option(value="少儿-少儿剧场") 少儿-少儿剧场
+						option(value="少儿-亲子成长") 少儿-亲子成长
+						option(value="少儿-少儿节目") 少儿-少儿节目
+						option(value="搞笑-鬼畜") 搞笑-鬼畜
+						option(value="搞笑-奇趣") 搞笑-奇趣
+						option(value="搞笑-段子剧") 搞笑-段子剧
+						option(value="搞笑-神回复") 搞笑-神回复
+						option(value="搞笑-熊孩子") 搞笑-熊孩子
+						option(value="搞笑-恶搞糗事") 搞笑-恶搞糗事
+						option(value="搞笑-爆笑原创") 搞笑-爆笑原创
+						option(value="搞笑-爆笑动物") 搞笑-爆笑动物
+						option(value="搞笑-爆笑恶搞") 搞笑-爆笑恶搞
+						option(value="搞笑-相声小品") 搞笑-相声小品
+						option(value="纪录片-纪录片") 纪录片-纪录片
+						option(value="文化历史-读书") 文化历史-读书
+						option(value="文化历史-艺术") 文化历史-艺术
+						option(value="文化历史-宗教") 文化历史-宗教
+						option(value="文化历史-历史") 文化历史-历史
+						option(value="新闻-国内时政") 新闻-国内时政
+						option(value="新闻-国内民生") 新闻-国内民生
+						option(value="新闻-国际时政") 新闻-国际时政
+						option(value="新闻-国际社会") 新闻-国际社会
+						option(value="新闻-社会百态") 新闻-社会百态
+						option(value="新闻-人物访谈") 新闻-人物访谈
+						option(value="新闻-地方政务") 新闻-地方政务
+						option(value="新闻-奇闻趣事") 新闻-奇闻趣事
+						option(value="新闻-法制") 新闻-法制
+						option(value="新闻-反腐") 新闻-反腐
+						option(value="新闻-交通") 新闻-交通
+						option(value="新闻-安全") 新闻-安全
+						option(value="新闻-正能量") 新闻-正能量
+						option(value="旅游-境内游") 旅游-境内游
+						option(value="旅游-境外游") 旅游-境外游
+						option(value="旅游-旅行攻略") 旅游-旅行攻略
+						option(value="旅游-旅行趣闻") 旅游-旅行趣闻
+						option(value="时尚-时尚资讯") 时尚-时尚资讯
+						option(value="时尚-时尚大片") 时尚-时尚大片
+						option(value="时尚-美容化妆") 时尚-美容化妆
+						option(value="时尚-潮流奢品") 时尚-潮流奢品
+						option(value="时尚-男士时尚") 时尚-男士时尚
+						option(value="时尚-T台秀场") 时尚-T台秀场
+						option(value="时尚-穿搭") 时尚-穿搭
+						option(value="母婴-孕产") 母婴-孕产
+						option(value="母婴-早教") 母婴-早教
+						option(value="母婴-萌宝") 母婴-萌宝
+						option(value="母婴-保健护理") 母婴-保健护理
+						option(value="汽车-新车速递") 汽车-新车速递
+						option(value="汽车-试驾评测") 汽车-试驾评测
+						option(value="汽车-汽车资讯") 汽车-汽车资讯
+						option(value="汽车-用车之道") 汽车-用车之道
+						option(value="汽车-玩车") 汽车-玩车
+						option(value="汽车-车模") 汽车-车模
+						option(value="汽车-汽车其他") 汽车-汽车其他
+						option(value="财经-公司") 财经-公司
+						option(value="财经-创业") 财经-创业
+						option(value="财经-经济") 财经-经济
+						option(value="财经-消费") 财经-消费
+						option(value="财经-投资") 财经-投资
+						option(value="财经-理财") 财经-理财
+						option(value="财经-产经") 财经-产经
+						option(value="财经-股市") 财经-股市
+						option(value="财经-金融") 财经-金融
+						option(value="财经-房地产") 财经-房地产
+						option(value="财经-财经人物") 财经-财经人物
+						option(value="游戏-手机游戏") 游戏-手机游戏
+						option(value="游戏-网络游戏") 游戏-网络游戏
+						option(value="游戏-单机游戏") 游戏-单机游戏
+						option(value="游戏-游戏节目") 游戏-游戏节目
+						option(value="游戏-达人解说") 游戏-达人解说
+						option(value="游戏-电竞赛事") 游戏-电竞赛事
+						option(value="游戏-游戏展会") 游戏-游戏展会
+						option(value="游戏-游戏周边") 游戏-游戏周边
+						option(value="生活-宠物") 生活-宠物
+						option(value="生活-美食") 生活-美食
+						option(value="生活-两性") 生活-两性
+						option(value="生活-星座") 生活-星座
+						option(value="生活-情感") 生活-情感
+						option(value="生活-健康") 生活-健康
+						option(value="生活-休闲") 生活-休闲
+						option(value="生活-健身") 生活-健身
+						option(value="生活-家居") 生活-家居
+						option(value="生活-生活窍门") 生活-生活窍门
+						option(value="生活-风水命理") 生活-风水命理
+						option(value="科学-科学实验") 科学-科学实验
+						option(value="科学-太空探索") 科学-太空探索
+						option(value="科学-科学其他") 科学-科学其他
+						option(value="科技-机械") 科技-机械
+						option(value="科技-互联网") 科技-互联网
+						option(value="科技-科技前沿") 科技-科技前沿
+						option(value="科技-科技奇趣") 科技-科技奇趣
+						option(value="科技-航空航天") 科技-航空航天
+						option(value="军事-军情解读") 军事-军情解读
+						option(value="军事-军事节目") 军事-军事节目
+						option(value="军事-武器装备") 军事-武器装备
+						option(value="军事-战争历史") 军事-战争历史
+						option(value="科普-科普") 科普-科普
+						option(value="其他-广告") 其他-广告
+						option(value="其他-创意") 其他-创意
+						option(value="其他-自拍") 其他-自拍
+						option(value="其他-摄影") 其他-摄影
+						option(value="其他-公益短片") 其他-公益短片
+					视频标签
+					input.VideoTag.textArea.form-control#omqqVideoTag(type="text" name="omqqVideoTag" )
+					预约发布时间
+					input.form_datetime.form-control#omqqUploadTime(size="16" type="text" name="omqqUploadTime" value="2012-06-15 14:45")
+					视频简介
+					textarea.form-control#omqqVideoDesc(rows="3" name="omqqVideoDesc")
+				section.area#bilibili
+					h1 哔哩哔哩
+					用户名
+					input.uname.textArea.form-control#bilibiliUserName(type="text" name="bilibiliUserName") 
+					密码
+					input.upass.textArea.form-control#bilibiliPassword(type="text" name="bilibiliPassword")
+					视频标题
+					input.VideoName.textArea.form-control#bilibiliVideoName(type="text" name="bilibiliVideoName")
+					视频标签
+					input.VideoTag.textArea.form-control#bilibiliVideoTag(type="text" name="bilibiliVideoTag" )
+					是否原创
+					input.VideoOrigin.textArea.form-control#bilibiliVideoOrigin(type="checkbox" checked name="bilibiliVideoOrigin")
+					视频分区
+					select.form-control#bilibiliVideoCategory(name="bilibiliVideoCategory")
+						option(value="24") 动画-MAD·AMV
+						option(value="25") 动画-MMD·3D
+						option(value="27") 动画-综合
+						option(value="47") 动画-短片·手书·配音
+						option(value="28") 音乐-原创音乐
+						option(value="29") 音乐-三次元音乐
+						option(value="30") 音乐-VOCALOID·UTAU
+						option(value="31") 音乐-翻唱
+						option(value="54") 音乐-OP/ED/OST
+						option(value="59") 音乐-演奏
+						option(value="130") 音乐-音乐选集
+						option(value="17") 游戏-单机联机
+						option(value="19") 游戏-Mugen
+						option(value="65") 游戏-网游·电竞
+						option(value="121") 游戏-GMV
+						option(value="136") 游戏-音游
+						option(value="71") 娱乐-综艺
+						option(value="131") 娱乐-Korea相关
+						option(value="137") 娱乐-明星
+						option(value="34") 电视剧-完结剧集
+						option(value="15") 电视剧-连载剧集
+						option(value="86") 电视剧-特摄·布袋
+						option(value="128") 电视剧-电视剧相关
+						option(value="32") 番剧-完结动画
+						option(value="33") 番剧-连载动画
+						option(value="51") 番剧-资讯
+						option(value="152") 番剧-官方延伸
+						option(value="153") 番剧-国产动画
+						option(value="82") 电影-电影相关
+						option(value="83") 电影-其他国家
+						option(value="85") 电影-短片
+						option(value="145") 电影-欧美电影
+						option(value="146") 电影-日本电影
+						option(value="147") 电影-国产电影
+						option(value="37") 科技-纪录片
+						option(value="39") 科技-演讲•公开课
+						option(value="95") 科技-数码
+						option(value="96") 科技-星海
+						option(value="98") 科技-机械
+						option(value="122") 科技-野生技术协会
+						option(value="124") 科技-趣味科普人文
+						option(value="22") 鬼畜-鬼畜调教
+						option(value="26") 鬼畜-音MAD
+						option(value="126") 鬼畜-人力VOCALOID
+						option(value="127") 鬼畜-教程演示
+						option(value="20") 舞蹈-宅舞
+						option(value="154") 舞蹈-三次元舞蹈
+						option(value="156") 舞蹈-舞蹈教程
+						option(value="157") 时尚-美妆
+						option(value="158") 时尚-服饰
+						option(value="159") 时尚-资讯
+						option(value="164") 时尚-健身
+						option(value="21") 生活-日常
+						option(value="75")  生活-动物圈
+						option(value="76") 生活-美食圈
+						option(value="138") 生活-搞笑
+						option(value="161") 生活-手工
+						option(value="162") 生活-绘画
+						option(value="163") 生活-运动
+					预约发布时间
+					input.form_datetime.form-control#bilibiliUploadTime(size="16" type="text" name="bilibiliUploadTime" value="2012-06-15 14:45")
+					视频简介
+					textarea.form-control#bilibiliVideoDesc(rows="3" name="bilibiliVideoDesc")
+				section.area#five6
+					h1 56视频
+					用户名
+					input.uname.textArea.form-control#five6UserName(type="text" name="five6UserName") 
+					密码
+					input.upass.textArea.form-control#five6Password(type="text" name="five6Password")
+					视频标题
+					input.VideoName.textArea.form-control#five6VideoName(type="text" name="five6VideoName")
+					是否原创
+					input.VideoOrigin.textArea.form-control#five6VideoOrigin(type="checkbox" checked name="five6VideoOrigin")
+					视频标签
+					input.VideoTag.textArea.form-control#five6VideoTag(type="text" name="five6VideoTag" )
+					视频分类
+					select.form-control#five6VideoCategory(name="five6VideoCategory")
+						option(value="131128-131128") 国内游-国内游
+						option(value="106-106127") 综艺-脱口秀
+						option(value="100-100136") 电影-微电影
+						option(value="133-133113") 搞笑-恶搞吐槽
+						option(value="133-133126") 搞笑-混剪配音/穿帮
+						option(value="133-133123") 搞笑-奇闻趣事
+						option(value="133-133125") 搞笑-搞笑动画
+						option(value="133-133128") 搞笑-音乐歪唱
+						option(value="133-133124") 搞笑-相声小品
+						option(value="133-133129") 搞笑-萌宠
+						option(value="128116-128116") 游戏-单机游戏
+						option(value="101134-101134100") 网络剧-搞笑
+						option(value="101134-101134101") 网络剧-爱情
+						option(value="101134-101134103") 网络剧-悬疑
+						option(value="101134-101134102") 网络剧-亲情
+						option(value="101134-101134105") 网络剧-公益
+						option(value="101134-101134104") 网络剧-其他
+						option(value="206-206100") 时尚美妆-护肤
+						option(value="206-206101") 时尚美妆-发型
+						option(value="206-206102") 时尚美妆-化妆
+						option(value="206-206103") 时尚美妆-穿搭
+						option(value="206-206104") 时尚美妆-星尚文化
+						option(value="206-206105") 时尚美妆-时尚街拍
+						option(value="210-210114") 学习考试-小初高\考研
+						option(value="210-210119") 学习考试-外语
+						option(value="210-210120") 学习考试-公考类
+						option(value="210-210121") 学习考试-职场充电
+						option(value="210-210122") 学习考试-职业考试
+						option(value="210-210123") 学习考试-科普
+						option(value="210-210124") 学习考试-休闲课堂
+						option(value="129-129127") 小知识-恋爱百科
+						option(value="129-129123") 小知识-生活百科
+						option(value="129-129130") 小知识-投资理财
+						option(value="209-209100") 健康养生-医学常识
+						option(value="209-209101") 健康养生-养生
+						option(value="209-209102") 健康养生-两性
+						option(value="115-115140") 动漫-科普
+						option(value="115-115141") 动漫-吐槽
+						option(value="115-115134") 动漫-cosplay
+						option(value="115-115139") 动漫-搞笑
+						option(value="115-115135") 动漫-其他
+						option(value="202-202101") 娱乐八卦-娱乐大事件
+						option(value="202-202100") 娱乐八卦-影视赏析
+						option(value="126-126120") 汽车-用车常识
+						option(value="126-126124") 汽车-试驾评测
+						option(value="126-126108") 汽车-香车美女
+						option(value="126-126125") 汽车-新车资讯
+						option(value="126-126121") 汽车-玩车改装
+						option(value="126-126122") 汽车-交通警示
+						option(value="126-126126") 汽车-业界动态
+						option(value="126-126119") 汽车-赛事
+						option(value="127-127100") 科技-随身数码
+						option(value="127-127115") 科技-智能家居
+						option(value="127-127119") 科技-科技评测
+						option(value="127-127116") 科技-IT业界
+						option(value="127-127120") 科技-软件应用
+						option(value="127-127106") 科技-科技资讯
+						option(value="127-127109") 科技-新奇酷玩
+						option(value="127-127121") 科技-航拍
+						option(value="125-125104") 运动健身-极限运动
+						option(value="125-125116") 运动健身-球类
+						option(value="125-125117") 运动健身-运动装备
+						option(value="125-125119") 运动健身-跑步
+						option(value="125-125120") 运动健身-运动常识
+						option(value="125-125121") 运动健身-健身塑形
+						option(value="208-208100") 做饭-家常菜
+						option(value="208-208101") 做饭-日韩料理
+						option(value="208-208102") 做饭-西餐
+						option(value="208-208103") 做饭-甜品烘焙
+						option(value="132-132119") 母婴-少儿卡通
+						option(value="132-132120") 母婴-母婴宝典
+						option(value="132-132121") 母婴-萌娃秀
+						option(value="132-132122") 母婴-宝贝辅食
+						option(value="132-132123") 母婴-孕产知识
+						option(value="132-132124") 母婴-育儿健康
+						option(value="132-132125") 母婴-早教
+						option(value="121-121114") 音乐-原创
+						option(value="121-121124") 音乐-翻唱
+						option(value="121-121125") 音乐-音乐策划
+						option(value="121-121126") 音乐-花絮
+						option(value="107-107121") 纪录片-探索
+						option(value="107-107122") 纪录片-历史
+						option(value="107-107123") 纪录片-科学
+						option(value="107-107114") 纪录片-社会人文
+						option(value="107-107120") 纪录片-其他
+						option(value="207-207100") 星座-星座八卦
+						option(value="207-207101") 星座-星座解析
+						option(value="207-207102") 星座-星座运势
+						option(value="205-205100") 舞蹈-街舞热舞
+						option(value="205-205101") 舞蹈-宅舞
+						option(value="205-205102") 舞蹈-广场舞
+						option(value="204-204100") 公开课-社会人文
+						option(value="204-204101") 公开课-名师在线
+						option(value="204-204102") 公开课-纪实纪录
+						option(value="204-204103") 公开课-国内大学
+						option(value="204-204104") 公开课-职业考试
+						option(value="212-212100") 千里眼-头条爆料
+						option(value="212-212101") 千里眼-第一现场
+						option(value="212-212102") 千里眼-监拍纪实
+						option(value="212-212103") 千里眼-行车记录
+						option(value="212-212104") 千里眼-街采策划
+						option(value="212-212105") 千里眼-航拍视界
+						option(value="212-212106") 千里眼-民间牛人
+						option(value="212-212107") 千里眼-深度报道
+						option(value="212-212108") 千里眼-奇葩囧事
+						option(value="212-212109") 千里眼-镜头故事
+						option(value="192-192104") 其他-军事
+						option(value="192-192102") 其他-广告
+						option(value="192-192103") 其他-其他
+					预约发布时间
+					input.form_datetime.form-control#five6UploadTime(size="16" type="text" name="five6UploadTime" value="2012-06-15 14:45")
+					视频简介
+					textarea.form-control#five6VideoDesc(rows="3" name="five6VideoDesc")
+				section.area#tudou
+					h1 土豆视频
+					用户名
+					input.uname.textArea.form-control#tudouUserName(type="text" name="tudouUserName") 
+					密码
+					input.upass.textArea.form-control#tudouPassword(type="text" name="tudouPassword")
+					视频标题
+					input.VideoName.textArea.form-control#tudouVideoName(type="text" name="tudouVideoName")
+					是否原创
+					input.VideoOrigin.textArea.form-control#tudouVideoOrigin(type="checkbox" checked name="tudouVideoOrigin")
+					视频标签
+					input.VideoTag.textArea.form-control#tudouVideoTag(type="text" name="tudouVideoTag" )
+					视频分类
+					select.form-control#tudouVideoCategory(name="tudouVideoCategory")
+						option(value="1") 娱乐
+						option(value="3") 生活
+						option(value="5") 搞笑
+						option(value="9") 动漫
+						option(value="10") 游戏
+						option(value="14") 音乐
+						option(value="15") 体育
+						option(value="18") 创意视频
+						option(value="19") 网络剧
+						option(value="21") 科技
+						option(value="22") 电影
+						option(value="25") 教育
+						option(value="26") 汽车
+						option(value="28") 纪实
+						option(value="29") 资讯
+						option(value="30") 电视剧
+						option(value="31") 综艺
+						option(value="32") 时尚
+						option(value="33") 健康
+						option(value="34") 美容
+						option(value="39") 微电影
+						option(value="40") 曲艺
+					预约发布时间
+					input.form_datetime.form-control#tudouUploadTime(size="16" type="text" name="tudouUploadTime" value="2012-06-15 14:45")
+					视频简介
+					textarea.form-control#tudouVideoDesc(rows="3" name="tudouVideoDesc")
+				section.area#aiqiyi
+					h1 爱奇艺
+					用户名
+					input.uname.textArea.form-control#aiqiyiUserName(type="text" name="aiqiyiUserName") 
+					密码
+					input.upass.textArea.form-control#aiqiyiPassword(type="text" name="aiqiyiPassword")
+					视频标题
+					input.VideoName.textArea.form-control#aiqiyiVideoName(type="text" name="aiqiyiVideoName")
+					视频类别
+					select.VideoOrigin.textArea.form-control#aiqiyiVideoOrigin(name="aiqiyiVideoOrigin")
+						option(value="0") 拍客
+						option(value="2") 原创
+						option(value="1") 转载
+					视频标签
+					input.VideoTag.textArea.form-control#aiqiyiVideoTag(type="text" name="aiqiyiVideoTag" )
+					视频分类
+					select.form-control#aiqiyiVideoCategory(name="aiqiyiVideoCategory")
+						option(value="1")  娱乐
+						option(value="2")  音乐
+						option(value="3")  资讯
+						option(value="4")  生活
+						option(value="5")  时尚
+						option(value="6")  教育
+						option(value="7")  游戏
+						option(value="8")  搞笑
+						option(value="9")  动漫
+						option(value="10")  汽车
+						option(value="11")  综艺
+						option(value="12")  脱口秀
+						option(value="13")  电影
+						option(value="14")  电视剧
+						option(value="15")  原创
+						option(value="16")  体育
+						option(value="17")  纪录片
+						option(value="18")  旅游
+						option(value="19")  财经
+						option(value="20")  片花
+						option(value="21")  少儿
+						option(value="22")  微电影
+						option(value="23")  广告
+						option(value="24")  军事
+						option(value="25")  母婴
+						option(value="26")  科技
+						option(value="27")  健康
+						option(value="28")  公益
+					预约发布时间
+					input.form_datetime.form-control#aiqiyiUploadTime(size="16" type="text" name="aiqiyiUploadTime" value="2012-06-15 14:45")
+					视频简介
+					textarea.form-control#aiqiyiVideoDesc(rows="3" name="aiqiyiVideoDesc")
+				section.area#leshi
+					h1 乐视
+					用户名
+					input.uname.textArea.form-control#leshiUserName(type="text" name="leshiUserName") 
+					密码
+					input.upass.textArea.form-control#leshiPassword(type="text" name="leshiPassword")
+					视频标题
+					input.VideoName.textArea.form-control#leshiVideoName(type="text" name="leshiVideoName")
+					是否原创
+					input.VideoOrigin.textArea.form-control#leshiVideoOrigin(type="checkbox" checked name="leshiVideoOrigin")
+					视频标签
+					input.VideoTag.textArea.form-control#leshiVideoTag(type="text" name="leshiVideoTag" )
+					视频分类
+					select.form-control#leshiVideoCategory(name="leshiVideoCategory")
+						option(value="592023") 乐享
+						option(value="592007") 综艺
+						option(value="592013") 体育
+						option(value="592019") 教育
+						option(value="592006") 片花
+						option(value="592022") 社会热点
+						option(value="592039") 拍客
+						option(value="592008") 电影
+						option(value="592014") 游戏
+						option(value="592020") 科技
+						option(value="592024") 美女
+						option(value="592021") 军事
+						option(value="592001") 音乐
+						option(value="592009") 纪录片
+						option(value="592015") 原创
+						option(value="592017") 生活
+						option(value="592012") 汽车
+						option(value="592025") 动漫
+						option(value="592002") 娱乐
+						option(value="592010") 财经
+						option(value="592016") 广告
+						option(value="592018") 健康
+						option(value="592026") 宠物
+						option(value="592011") 搞笑
+						option(value="592003") 时尚
+						option(value="592005") 亲子
+						option(value="592097") 校园
+						option(value="542001") 铃声
+						option(value="592004") 旅游
+						option(value="592111") 乐次元
+						option(value="592023") 其他
+					预约发布时间
+					input.form_datetime.form-control#leshiUploadTime(size="16" type="text" name="leshiUploadTime" value="2012-06-15 14:45")
+					视频简介
+					textarea.form-control#leshiVideoDesc(rows="3" name="leshiVideoDesc")
+				section.area#toutiao
+					h1 今日头条
+					用户名
+					input.uname.textArea.form-control#toutiaoUserName(type="text" name="toutiaoUserName") 
+					密码
+					input.upass.textArea.form-control#toutiaoPassword(type="text" name="toutiaoPassword")
+					视频标题
+					input.VideoName.textArea.form-control#toutiaoVideoName(type="text" name="toutiaoVideoName")
+					是否原创
+					input.VideoOrigin.textArea.form-control#toutiaoVideoOrigin(type="checkbox" checked name="toutiaoVideoOrigin")
+					视频标签
+					input.VideoTag.textArea.form-control#toutiaoVideoTag(type="text" name="toutiaoVideoTag" )
+					视频分类
+					select.form-control#toutiaoVideoCategory(name="toutiaoVideoCategory")
+						option(value="131128-131128") 国内游-国内游
+					预约发布时间
+					input.form_datetime.form-control#toutiaoUploadTime(size="16" type="text" name="toutiaoUploadTime" value="2012-06-15 14:45")
+					视频简介
+					textarea.form-control#toutiaoVideoDesc(rows="3" name="toutiaoVideoDesc")
+			div.right
+				div.info
+					h1 第三步
+				//- div.submit
+			input.btn.btn-primary(type="submit" name="submit" style="margin:65px;" value="提交") 
+	footer
+		p 版权所有®2013-2016

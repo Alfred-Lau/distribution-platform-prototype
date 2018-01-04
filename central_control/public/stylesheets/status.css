@@ -1,0 +1,44 @@
+html,
+body {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    height: 100%;
+    background: white;
+}
+
+header {
+    height: 80px;
+    background: #efefef;
+    margin-bottom: 20px;
+}
+
+header a img {
+    height: 80px;
+    float: left;
+}
+
+header span {
+    margin-left: 10px;
+    line-height: 80px;
+    font-size: 40px;
+    font-family: "papyrus";
+    float: left;
+}
+
+
+
+footer {
+    clear: both;
+    height: 80px;
+    width: 100%;
+    background: #e8e8e8;
+}
+
+footer p {
+    text-align: center;
+    line-height: 80px;
+}
